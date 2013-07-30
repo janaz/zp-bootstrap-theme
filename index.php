@@ -175,7 +175,7 @@ if (count($nav) > 3) { ?>
 <hr/>
 
 <footer>
-    <p>© Tomasz Janowski <a href="https://twitter.com/janowskit">@janowskit</a></p>
+    <p>Theme created by <a href="https://twitter.com/janowskit">@janowskit</a></p>
 </footer>
 
 
