@@ -1,0 +1,10 @@
+.img-thumb {
+  margin: 10px;
+  width: 120px;
+  display: inline-block;
+}
+
+.gal-thumb {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
