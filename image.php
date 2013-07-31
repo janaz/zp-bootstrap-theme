@@ -16,6 +16,7 @@
             padding-bottom: 10px;
         }
     </style>
+    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap-responsive.min.css?ts=201307311656'?>" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -60,8 +61,8 @@
       </div>
     </div>
 
-<div>
-    <ul class="breadcrumb" style="display: inline-block;">
+<div style="container">
+    <ul class="breadcrumb" width="70%" style="display: inline-block;">
       <li><a href="<?= html_encode(getGalleryIndexURL()) ?>">Home</a> <span class="divider">/</span></li>
       <? foreach (getParentBreadcrumb() as $el) { ?>
           <li><a href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a> <span class="divider">/</span></li>
