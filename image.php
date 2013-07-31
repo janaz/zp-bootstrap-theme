@@ -30,16 +30,8 @@
 
 <div class="container">
     <div class="navbar navbar-inverse navbar-static-top">
-    <div class="container" style="width: auto;">
-        <a class="navbar-brand" href="<?= html_encode(getGalleryIndexURL()) ?>"><? printGalleryTitle() ?></a>
-        <!--
-        <ul class="nav navbar-nav">
-          <? foreach (getParentBreadcrumb() as $el) { ?>
-              <li><a class="nav navbar-nav" href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a><li>
-          <? } ?>
-          <li><a class="nav navbar-nav inactive"><? printAlbumTitle(); ?></a></li>
-        </ul>
-        -->
+      <div class="navbar-inner">
+        <a class="brand" href="<?= html_encode(getGalleryIndexURL()) ?>"><? printGalleryTitle() ?></a>
         <form class="navbar-form pull-right">
             <input type="text" class="form-control" style="width: 200px;">
             <button type="submit" class="btn btn-default"><?= gettext('search') ?></button>
@@ -65,29 +57,25 @@
                 </li>
             </ul>
         <? } ?>
+      </div>
     </div>
-</div>
 
-<div class="row">
-<div class="col-lg-10">
-<ul class="breadcrumb">
-  <li><a href="<?= html_encode(getGalleryIndexURL()) ?>">Home</a></li>
-  <? foreach (getParentBreadcrumb() as $el) { ?>
-      <li><a href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a></li>
-  <? }
-  $ab = getAlbumBreadcrumb();
-  ?>
-  <li><a href="<?= html_encode($ab['link'])?>"><?= html_encode($ab['title']) ?></a></li>
-  <li class="active"><? printImageTitle(); ?></li>
+<div>
+    <ul class="breadcrumb" style="display: inline-block;">
+      <li><a href="<?= html_encode(getGalleryIndexURL()) ?>">Home</a> <span class="divider">/</span></li>
+      <? foreach (getParentBreadcrumb() as $el) { ?>
+          <li><a href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a> <span class="divider">/</span></li>
+      <? }
+      $ab = getAlbumBreadcrumb();
+      ?>
+      <li><a href="<?= html_encode($ab['link'])?>"><?= html_encode($ab['title']) ?></a> <span class="divider">/</span></li>
+      <li class="active"><? printImageTitle(); ?></li>
 
-</ul>
-</div>
-<div class="col-lg-2">
+    </ul>
         <div class="btn-group pull-right">
-            <a type="button" class="btn btn-default" <?= hasPrevImage() ? '':'disabled="disabled"'?> href="<?=html_encode(getPrevImageURL())?>">Prev</a>
-            <a type="button" class="btn btn-default" <?= hasNextImage() ? '':'disabled="disabled"'?> href="<?=html_encode(getNextImageURL())?>">Next</a>
+            <a type="button" class="btn btn-inverse <?= hasPrevImage() ? '':'disabled'?>" href="<?=hasPrevImage() ? html_encode(getPrevImageURL()) : '#'?>">Prev</a>
+            <a type="button" class="btn btn-inverse <?= hasNextImage() ? '':'disabled'?>" href="<?=hasNextImage() ? html_encode(getNextImageURL()) : '#'?>">Next</a>
         </div>
-                      </div>
 </div>
 <? if (strpos($_zp_current_image->imagetype, 'image') !== false) { ?>
 <div class="container">

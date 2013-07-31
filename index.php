@@ -16,6 +16,7 @@
             padding-bottom: 10px;
         }
     </style>
+    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap-responsive.min.css?ts=201307171656'?>" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -30,16 +31,8 @@
 
 <div class="container">
     <div class="navbar navbar-inverse navbar-static-top">
-    <div class="container" style="width: auto;">
-        <a class="navbar-brand" href="<?= html_encode(getGalleryIndexURL()) ?>"><? printGalleryTitle() ?></a>
-        <!--
-        <ul class="nav navbar-nav">
-          <? foreach (getParentBreadcrumb() as $el) { ?>
-              <li><a class="nav navbar-nav" href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a><li>
-          <? } ?>
-          <li><a class="nav navbar-nav inactive"><? printAlbumTitle(); ?></a></li>
-        </ul>
-        -->
+      <div class="navbar-inner">
+        <a class="brand" href="<?= html_encode(getGalleryIndexURL()) ?>"><? printGalleryTitle() ?></a>
         <form class="navbar-form pull-right">
             <input type="text" class="form-control" style="width: 200px;">
             <button type="submit" class="btn btn-default"><?= gettext('search') ?></button>
@@ -65,53 +58,53 @@
                 </li>
             </ul>
         <? } ?>
+      </div>
     </div>
-</div>
 
 <!--
 <ul class="breadcrumb">
-  <li><a href="<?= html_encode(getGalleryIndexURL()) ?>">Home</a></li>
+  <li><a href="<?= html_encode(getGalleryIndexURL()) ?>">Home</a> <span class="divider">/</span></li>
   <? foreach (getParentBreadcrumb() as $el) { ?>
-      <li><a href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a></li>
+      <li><a href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a> <span class="divider">/</span></li>
   <? } ?>
   <li class="active"><? printAlbumTitle(); ?></li>
 </ul>
 -->
-
 <p>	<?php printAlbumDesc(); ?> </p>
 
-<div class="row">
+<ul class="thumbnails">
 	<? while (next_album()) { ?>
-        <div class="gal-thumb col-lg-4">
-            <div class="row">
-                <div class="col-lg-4">
+        <li class="span5">
+            <ul class="thumbnails">
+                <li class="span2">
                     <a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printAnnotatedAlbumTitle(); ?>"><?php printAlbumThumbImage(getAnnotatedAlbumTitle(), 'img-rounded'); ?></a>
-                </div>
-                <div class="col-lg-8">
+                </li>
+                <li class="span3">
                     <h4><a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printAnnotatedAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h4>
                     <p><?php printAlbumDate(""); ?></p>
                     <p><?php printAlbumDesc(); ?></p>
-                </div>
-            </div>
-        </div>
+                </li>
+            </ul>
+        </li>
 	<? } ?>
-</div>
+</ul>
 
 
-<div class="container" style="width: auto;">
+<ul class="thumbnails">
     <? while (next_image()) { ?>
-        <div class="img-thumb">
+      <li class="span2">
             <a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php printBareImageTitle(); ?>">
                 <?php printImageThumb(getAnnotatedImageTitle(), 'img-rounded'); ?>
             </a>
-        </div>
+      </li>
     <? } ?>
-</div>
+</ul>
 
 <?
 $nav = getPageNavList (false, 9, true, getCurrentPage(), max(1, getTotalPages(false) ) );
 if (count($nav) > 3) { ?>
-    <ul class="pagination">
+    <div class="pagination">
+    <ul>
     <? foreach($nav as $k=>$v) {
           $label = $k;
           if ($k == 'prev') {
@@ -130,47 +123,11 @@ if (count($nav) > 3) { ?>
           <li <?= $c ?> ><a href="<?=html_encode($v)?>"><?= $label ?></a></li>
           <?
     } ?>
-    </ul>
+    <ul>
+    </div>
 <?
 }
 ?>
-<!--
-
-<div class="container">
-    <div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-default">Prev</button>
-        </div>
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-default">Next</button>
-        </div>
-    </div>
-    <p class="text-center">
-    <img src="/assets/img/p.jpg" width="90%">
-    </p>
-</div>
-
-
-
-<div class="container" style="text-align: center;">
-<div id="myVideo" width="90%"><p>Loading the player....</p></div>
-</div>
-<script type="text/javascript" src="/assets/jwplayer/jwplayer.js"></script>
-    <script type="text/javascript">
-        jwplayer("myVideo").setup({
-            file: "/uploads/vid.mp4",
-            image: "/uploads/vid.jpg",
-            title: "A title",
-            aspectratio: "16:9",
-            skin: "/assets/jwplayer/six.xml",
-            autostart: false,
-            stretching: "uniform",
-            width: "90%",
-            controls: true
-        });
-    </script>
--->
-
 
 <hr/>
 
