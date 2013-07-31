@@ -89,13 +89,13 @@
         </div>
                       </div>
 </div>
-<? if ($_zp_current_image->imagetype == 'images') { ?>
+<? if (strpos($_zp_current_image->imagetype, 'image') !== false) { ?>
 <div class="container">
     <p class="text-center">
     <img src="<?=html_encode(getCustomSizedImageMaxSpace(960, 640))?>" width="80%">
     </p>
 </div>
-<? }else if ($_zp_current_image->imagetype == 'videos') { ?>
+<? }else if (strpos($_zp_current_image->imagetype, 'video') !== false) { ?>
 <?
 $preview_url = WEBPATH.ALBUM_FOLDER_EMPTY . $_zp_current_image->albumname .'/'. $_zp_current_image->objectsThumb;
 $video_url = $_zp_current_image->webpath;
