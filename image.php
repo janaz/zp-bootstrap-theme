@@ -81,7 +81,7 @@
 <? if (strpos($_zp_current_image->imagetype, 'image') !== false) { ?>
 <div class="container">
     <p class="text-center">
-    <img src="<?=html_encode(getCustomSizedImageMaxSpace(960, 640))?>" width="80%">
+    <img src="<?=html_encode(getCustomSizedImageMaxSpace(960, 640))?>" width="90%">
     </p>
 </div>
 <? }else if (strpos($_zp_current_image->imagetype, 'video') !== false) { ?>
@@ -90,7 +90,7 @@ $preview_url = WEBPATH.ALBUM_FOLDER_EMPTY . $_zp_current_image->albumname .'/'. 
 $video_url = $_zp_current_image->webpath;
 ?>
 <div class="container" style="text-align: center;">
-<div id="myVideo" width="80%"><p>Loading the player....</p></div>
+<div id="myVideo" width="90%"><p>Loading the player....</p></div>
 </div>
 <script type="text/javascript" src="<?= $bs_functions->getJWPlayerPath() . '/jwplayer.js' ?>"></script>
     <script type="text/javascript">
@@ -102,7 +102,7 @@ $video_url = $_zp_current_image->webpath;
             skin: "<?= $bs_functions->getJWPlayerPath() . '/six.xml' ?>",
             autostart: false,
             stretching: "exactfit",
-            width: "80%",
+            width: "90%",
             controls: true
         });
     </script>
