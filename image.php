@@ -108,7 +108,7 @@ $video_url = $_zp_current_image->webpath;
         jwplayer("myVideo").setup({
             file: "<?=html_encode($video_url)?>",
             image: "<?=html_encode($preview_url)?>",
-            title: "<?printBareImageTitle()?>",
+            title: "",
             aspectratio: "16:9",
             skin: "<?= $bs_functions->getJWPlayerPath() . '/six.xml' ?>",
             autostart: false,
