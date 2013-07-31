@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Le styles -->
-    <link href="<?= $bs_functions->getStylesPath() . '/custom.css?ts=201307171656'?>" rel="stylesheet">
+    <link href="<?= $bs_functions->getStylesPath() . '/custom.css?ts=201307311156'?>" rel="stylesheet">
     <link href="<?= $bs_functions->getStylesPath() . '/bootstrap.min.css?ts=201307171656'?>" rel="stylesheet">
     <style type="text/css">
         body {
