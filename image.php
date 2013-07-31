@@ -9,7 +9,7 @@
 
     <!-- Le styles -->
     <link href="<?= $bs_functions->getStylesPath() . '/custom.css?ts=201307311156'?>" rel="stylesheet">
-    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap.min.css?ts=201307171656'?>" rel="stylesheet">
+    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap.min.css?ts=201307311656'?>" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 10px;
@@ -19,7 +19,7 @@
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="<?= $bs_functions->getJSPath() . '/html5shiv.js?ts=201307171656'?>"></script>
+    <script src="<?= $bs_functions->getJSPath() . '/html5shiv.js?ts=201307311656'?>"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
@@ -119,6 +119,6 @@ $video_url = $_zp_current_image->webpath;
 </div>
 
 <script src="<?= $bs_functions->getJSPath() . '/jquery-1.10.2.min.js'?>"></script>
-<script src="<?= $bs_functions->getJSPath() . '/bootstrap.min.js'?>"></script>
+<script src="<?= $bs_functions->getJSPath() . '/bootstrap.min.js?ts=201307312311'?>"></script>
 </body>
 </html>

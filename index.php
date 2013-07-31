@@ -9,14 +9,14 @@
 
     <!-- Le styles -->
     <link href="<?= $bs_functions->getStylesPath() . '/custom.css?ts=201307171656'?>" rel="stylesheet">
-    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap.min.css?ts=201307171656'?>" rel="stylesheet">
+    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap.min.css?ts=201307311656'?>" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 10px;
             padding-bottom: 10px;
         }
     </style>
-    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap-responsive.min.css?ts=201307171656'?>" rel="stylesheet">
+    <link href="<?= $bs_functions->getStylesPath() . '/bootstrap-responsive.min.css?ts=201307311656'?>" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -139,6 +139,6 @@ if (count($nav) > 3) { ?>
 </div>
 
 <script src="<?= $bs_functions->getJSPath() . '/jquery-1.10.2.min.js'?>"></script>
-<script src="<?= $bs_functions->getJSPath() . '/bootstrap.min.js'?>"></script>
+<script src="<?= $bs_functions->getJSPath() . '/bootstrap.min.js?ts=201307312311'?>"></script>
 </body>
 </html>
