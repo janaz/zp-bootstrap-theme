@@ -81,7 +81,7 @@
 <? if (strpos($_zp_current_image->imagetype, 'image') !== false) { ?>
 <div class="container">
     <p class="text-center">
-    <img src="<?=html_encode(getCustomSizedImageMaxSpace(960, 640))?>" width="90%">
+    <img src="<?=html_encode(getCustomSizedImageMaxSpace(1080, 720))?>" width="90%">
     </p>
 </div>
 <? }else if (strpos($_zp_current_image->imagetype, 'video') !== false) { ?>
