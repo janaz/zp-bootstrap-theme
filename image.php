@@ -115,7 +115,25 @@ $video_url = $_zp_current_image->webpath;
 <? } ?>
 <p><?php printImageDesc(); ?></p>
 
-
+<hr/>
+<?
+$my_image = $_zp_current_image;
+?>
+<ul class="thumbnails">
+    <? while (next_image()) { ?>
+    <?
+      $style = 'style="border:4px solid white;"';
+      if ($_zp_current_image->localpath == $my_image->localpath) {
+        $style='style="border:4px solid red;"';
+      }
+    ?>
+      <li class="span1" <?= $style ?>>
+            <a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php printBareImageTitle(); ?>">
+                <?php printImageThumb(getAnnotatedImageTitle(), 'img-rounded'); ?>
+            </a>
+      </li>
+    <? } ?>
+</ul>
 <hr/>
 
 <footer>
