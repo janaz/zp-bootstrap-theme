@@ -79,9 +79,15 @@
         </div>
 </div>
 <? if (strpos($_zp_current_image->imagetype, 'image') !== false) { ?>
+<? 
+  $w = '90%';
+  if ($_zp_current_image->get('width') < $_zp_current_image->get('height')) {
+    $w = '60%';
+  }
+?>
 <div class="container">
     <p class="text-center">
-    <img src="<?=html_encode(getCustomSizedImageMaxSpace(1080, 720))?>" width="90%">
+    <img src="<?=html_encode(getCustomSizedImageMaxSpace(1080, 720))?>" width="<?= $w ?>">
     </p>
 </div>
 <? }else if (strpos($_zp_current_image->imagetype, 'video') !== false) { ?>
@@ -118,7 +124,11 @@ $video_url = $_zp_current_image->webpath;
 
 
 </div>
-
+<? if ($_GET['debug'] == 1) { ?>
+<pre style="font-size: 14px;">
+<? //print_r($_zp_current_image) ?>
+</pre>
+<? } ?>
 <script src="<?= $bs_functions->getJSPath() . '/jquery-1.10.2.min.js'?>"></script>
 <script src="<?= $bs_functions->getJSPath() . '/bootstrap.min.js?ts=201307312311'?>"></script>
 </body>
